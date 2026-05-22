@@ -1,0 +1,421 @@
+/* ==========================================================================
+   NASTAVENÍ TVÝCH BAREV (Zrcadlí barvy z tvé nahrané ikonky)
+   ========================================================================== */
+:root {
+    --pozadi-webu: #09090b;      /* Hluboká temná černá */
+    --karta-pozadi: #121217;     /* Pozadí boxíků a karet */
+    
+    --barva-oranova: #e27513;    /* Tvoje hlavní oranžová */
+    --barva-fialova: #671587;     /* Tvoje fialová - nyní více využitá */
+    --hlavni-neon: #00e5ff;      /* Tyrkysová pouze jako decentní svítící detail */
+    
+    --barva-textu: #ffffff;
+    --barva-popisku: #a0a0a5;
+}
+
+/* ==========================================================================
+   1. GLOBÁLNÍ NASTAVENÍ & RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    background-color: var(--pozadi-webu);
+    color: var(--barva-textu);
+}
+
+body {
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* KOREKCE: Tlačítko už nemá nucený tyrkysový obrys. Sází na čistou oranžovou a fialovou. */
+.btn {
+    display: inline-block;
+    background: var(--barva-oranova);
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none; /* Odstraněn tyrkysový okraj */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(226, 117, 19, 0.3);
+}
+
+.btn:hover {
+    background: var(--barva-fialova); /* Plynulý přechod do tvé fialové */
+    box-shadow: 0 4px 20px rgba(103, 21, 135, 0.5);
+    transform: translateY(-2px);
+}
+
+.section-desc {
+    text-align: center;
+    max-width: 700px;
+    margin: 10px auto 40px auto;
+    color: var(--barva-popisku);
+    font-size: 0.95rem;
+    padding: 0 20px;
+}
+
+.stat-img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   2. NAVIGAČNÍ MENU (Navbar)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(9, 9, 11, 0.95);
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid var(--barva-fialova); /* Změna na fialovou linku pro lepší propojení barev */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* KOREKCE: Čtverec za ikonou smazán. Ikona je teď čistě v prostoru a ladí s pozadím. */
+.nav-icon-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px var(--hlavni-neon)); /* Pouze jemný zářící stín pod brýlemi */
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.logo span {
+    color: var(--barva-oranova); /* Logo upraveno do tvých barev */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--barva-oranova);
+}
+
+/* ==========================================================================
+   3. ÚVODNÍ SEKCE (Hero)
+   ========================================================================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #250b30 0%, var(--pozadi-webu) 100%); /* Více fialový nádech pozadí */
+    padding: 0 20px;
+    border-bottom: 1px solid #1a1a24;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(103, 21, 135, 0.4);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--barva-popisku);
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   4. NASTAVENÍ SEKCÍ
+   ========================================================================== */
+section {
+    padding: 100px 20px 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-margin-top: 80px;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   5. MOJE STATISTIKY (Karty s fialovo-oranžovým nádechem)
+   ========================================================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-box {
+    background-color: var(--karta-pozadi);
+    border: 1px solid #1f1f29;
+    border-radius: 6px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--barva-fialova);
+    box-shadow: 0 5px 15px rgba(103, 21, 135, 0.2);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--barva-oranova);
+    margin: 5px 0;
+}
+
+.stat-explain {
+    font-size: 0.85rem;
+    color: var(--barva-popisku);
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   6. MŮJ DEMON LIST (Karty s fialovým akcentem)
+   ========================================================================== */
+.demon-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+}
+
+.demon-card {
+    background-color: var(--karta-pozadi);
+    border-left: 4px solid var(--barva-fialova); /* Změna z tyrkysové na tvou fialovou */
+    border-radius: 0 6px 6px 0;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    grid-column: span 2;
+    border-top: 1px solid #1f1f29;
+    border-right: 1px solid #1f1f29;
+    border-bottom: 1px solid #1f1f29;
+}
+
+.demon-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+.demon-card:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+.demon-card.top-1 {
+    border-left-color: var(--barva-oranova);
+    background: linear-gradient(135deg, #241408 0%, #150f1a 100%); /* Kombinace oranžové a fialové na pozadí */
+    box-shadow: 0 0 15px rgba(226, 117, 19, 0.15);
+}
+
+.demon-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    padding-right: 50px;
+}
+
+.rank {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--barva-oranova); 
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--barva-oranova);
+}
+
+.demon-card.top-1 .rank {
+    color: var(--hlavni-neon); /* Pro #1 použit decentní tyrkysový kontrast */
+    border: 1px solid var(--hlavni-neon);
+}
+
+.difficulty {
+    color: #ff4444;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.attempts {
+    font-size: 0.85rem;
+    color: var(--barva-popisku);
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   7. AKTUÁLNÍ CÍLE (Current Grind)
+   ========================================================================== */
+.grind-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.grind-box {
+    background: var(--karta-pozadi);
+    border: 1px dashed var(--barva-fialova);
+    padding: 25px 20px;
+    border-radius: 6px;
+    text-align: center;
+    transition: border-color 0.2s ease;
+}
+
+.grind-box:hover {
+    border-color: var(--barva-oranova);
+}
+
+.grind-box strong {
+    color: var(--barva-oranova);
+    font-size: 1.2rem;
+}
+
+.grind-attempts {
+    font-size: 0.85rem;
+    color: var(--barva-popisku);
+    margin-top: 8px;
+}
+
+/* ==========================================================================
+   8. POROVNÁNÍ STATISTIK
+   ========================================================================== */
+.compare-container {
+    background-color: var(--karta-pozadi);
+    border: 1px solid #1f1f29;
+    max-width: 500px;
+    margin: 20px auto 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: var(--barva-popisku);
+}
+
+.input-group input {
+    background-color: var(--pozadi-webu);
+    border: 1px solid #292936;
+    padding: 12px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--barva-fialova);
+}
+
+.result-box {
+    background-color: var(--pozadi-webu);
+    border-left: 4px solid var(--barva-oranova);
+    padding: 15px;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   9. PATIČKA & RESPONSIVITA
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #555;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--karta-pozadi);
+    margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .demon-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .demon-card, .demon-card:nth-child(4), .demon-card:nth-child(5) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        position: relative;
+    }
+    
+    section {
+        padding: 40px 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
