@@ -4,13 +4,22 @@ Komplexní, plně optimalizovaná webová prezentace zaměřená na osobní hern
 
 * **Odkaz na živý web:** [https://dwenzel024.github.io/rocnikova-prace/](https://dwenzel024.github.io/rocnikova-prace/)
 
+### Prohlášení o vypracování projektu
+Tento projekt byl vypracován autorem samostatně na základě vlastních herních statistik, grafických podkladů a herních dat z Geometry Dash. Během kódování a optimalizace responzivity byla jako pomocný konzultační nástroj využita umělá inteligence (AI), která asistovala při generování čisté struktury, odstraňování chyb v kódu a ladění zobrazení pro mobilní telefony. Výsledné architektonické řešení, integrace komponent a finální podoba webu jsou dílem autora.
+
+---
+
 ## 1. Použité technologie
+
 * **HTML5:** Sémantické tagy pro logickou strukturu obsahu.
 * **CSS3:** Moderní layouty (Flexbox, CSS Grid), CSS Variables pro dynamickou správu designu, responzivní design (Media Queries).
 * **Vanilla JavaScript (ES6+):** Programování klientské logiky bez externích knihoven, manipulace s DOM (Document Object Model), zpracování událostí.
 * **Vývojové prostředí:** Operační systém Windows 11, textový editor / IDE.
 
+---
+
 ## 2. Adresářová struktura
+
 ```text
 rocnikova-prace/
 ├── index.html          # Hlavní sémantický HTML5 dokument
